@@ -3,8 +3,8 @@ import CreateUserFactory from '../modules/createUser/CreateUserFactort';
 
 const UsersRouter = Router();
 
-UsersRouter.post('/', (req, res) => {
-  CreateUserFactory().handle(req, res);
+UsersRouter.post('/', (req, res, next) => {
+  CreateUserFactory().handle(req, res, next);
 });
 
 export { UsersRouter };
