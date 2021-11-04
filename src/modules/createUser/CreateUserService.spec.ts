@@ -14,9 +14,9 @@ describe('Create User', () => {
 
   it('Should be able to create a new User', async () => {
     const newUser: User = {
-      email: 'sostenesg7@gmail.com',
-      name: 'Sóstenes Gomes',
-      username: 'sostenesg7',
+      email: 'usertest@gmail.com',
+      name: 'User Test',
+      username: 'usertest',
     };
 
     const user = await usersService.execute(newUser);
