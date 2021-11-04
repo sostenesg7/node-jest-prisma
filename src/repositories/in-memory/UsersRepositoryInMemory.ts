@@ -2,14 +2,14 @@ import { User } from '../../entities/User';
 import { IUsersRepository } from '../IUsersRepository';
 import { v4 as uuid } from 'uuid';
 
-class InMemoryUsersRepositories implements InMemoryUsersRepositories {
+class UsersRepositoryInMemory implements IUsersRepository {
   private users: User[] = [];
 
   async create(user: User): Promise<User> {
-    Object.assign({}, user, { id: uuid() });
+    const newUser = { ...user, id: uuid() };
 
-    this.users.push(user);
-    return user;
+    this.users.push(newUser);
+    return newUser;
   }
 
   async exists(username: string): Promise<boolean> {
@@ -17,4 +17,4 @@ class InMemoryUsersRepositories implements InMemoryUsersRepositories {
   }
 }
 
-export { InMemoryUsersRepositories };
+export { UsersRepositoryInMemory };
