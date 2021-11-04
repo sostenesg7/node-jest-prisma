@@ -1,4 +1,4 @@
-import { InMemoryUsersRepositories } from '../../repositories/in-memory/UsersRepositoryInMemory';
+import { UsersRepositoryInMemory } from '../../repositories/in-memory/UsersRepositoryInMemory';
 import { UsersRepositoryPrisma } from '../../repositories/prisma/UsersRepositoryPrisma';
 import { CreateUserController } from './CreateUserController';
 import { CreateUserService } from './CreateUserService';

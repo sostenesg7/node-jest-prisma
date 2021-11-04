@@ -10,7 +10,8 @@ app.use(routes);
 
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
   if (error instanceof Error) {
-    return res.status(200).json({
+    return res.status(400).json({
+      status: 'error',
       message: error.message,
     });
   }

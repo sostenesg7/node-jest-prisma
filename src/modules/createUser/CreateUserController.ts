@@ -12,14 +12,17 @@ class CreateUserController {
   ) {
     const { email, name, username } = req.body;
 
-    this.createUserService
-      .execute({
+    try {
+      const user = await this.createUserService.execute({
         email,
         name,
         username,
-      })
-      .then(res.json)
-      .catch(next);
+      });
+
+      res.status(201).json(user);
+    } catch (error) {
+      next(error);
+    }
   }
 }
 
