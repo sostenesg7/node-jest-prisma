@@ -1,3 +1,7 @@
+/**
+ * @jest-environment ./prisma/prisma-environment-jest
+ */
+
 import app from '../../app';
 import request from 'supertest';
 import { User } from '../../entities/User';
@@ -6,9 +10,9 @@ import { prisma } from '../../database/client';
 // jest.setTimeout(30 * 1000);
 
 describe('Create User Controller', () => {
-  beforeEach(async () => {
-    await prisma.user.deleteMany({ where: {} });
-  });
+  // beforeEach(async () => {
+  //   await prisma.user.deleteMany({ where: {} });
+  // });
 
   it('Should be able to create a new user', async () => {
     const newUser: User = {

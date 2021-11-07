@@ -22,7 +22,7 @@ describe('Create User', () => {
     const user = await usersService.execute(newUser);
 
     expect(user).toHaveProperty('id');
-    expect(user.username).toBe('sostenesg7');
+    expect(user.username).toBe('usertest');
   });
 
   it('Should not be able to create a new User', async () => {
